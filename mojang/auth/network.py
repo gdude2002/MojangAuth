@@ -44,7 +44,7 @@ def do_authentication(client_token, username, password):
     payload["password"] = password
 
     request = requests.post(
-        ROUTE_AUTHENTICATE, headers=HEADERS, payload=json.dumps(payload)
+        ROUTE_AUTHENTICATE, headers=HEADERS, data=json.dumps(payload)
     )
 
     del payload, password
@@ -62,7 +62,7 @@ def do_refresh(client_token, access_token):
     payload["accessToken"] = access_token
 
     request = requests.post(
-        ROUTE_REFRESH, headers=HEADERS, payload=json.dumps(payload)
+        ROUTE_REFRESH, headers=HEADERS, data=json.dumps(payload)
     )
 
     del payload, access_token
@@ -79,7 +79,7 @@ def do_validate(access_token):
     payload["accessToken"] = access_token
 
     request = requests.post(
-        ROUTE_VALIDATE, headers=HEADERS, payload=json.dumps(payload)
+        ROUTE_VALIDATE, headers=HEADERS, data=json.dumps(payload)
     )
 
     del payload, access_token
@@ -97,7 +97,7 @@ def do_signout(username, password):
     payload["password"] = password
 
     request = requests.post(
-        ROUTE_SIGNOUT, headers=HEADERS, payload=json.dumps(payload)
+        ROUTE_SIGNOUT, headers=HEADERS, data=json.dumps(payload)
     )
 
     del payload, password
@@ -115,7 +115,7 @@ def do_invalidate(client_token, access_token):
     payload["accessToken"] = access_token
 
     request = requests.post(
-        ROUTE_INVALIDATE, headers=HEADERS, payload=json.dumps(payload)
+        ROUTE_INVALIDATE, headers=HEADERS, data=json.dumps(payload)
     )
 
     del payload, access_token
