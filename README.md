@@ -11,7 +11,7 @@ Be responsible and use at your own discretion.
 Usage
 =====
 
-* Install as usual from PyPi or `setup.py install`.
+* Install as usual [from PyPi](https://pypi.python.org/pypi/MojangAuth) or `setup.py install`.
 
 `mojang.auth.Account` can be used as follows.
 
