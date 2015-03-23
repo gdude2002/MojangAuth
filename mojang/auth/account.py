@@ -10,13 +10,8 @@ class Account(object):
 
     __username = ""
     __uuid = ""
-    __legacy = False
     __logged_in = False
     __profiles = []
-
-    @property
-    def legacy(self):
-        return self.__legacy
 
     @property
     def logged_in(self):
@@ -48,7 +43,6 @@ class Account(object):
 
         self.__uuid = profile["id"]
         self.__username = profile["name"]
-        self.__legacy = profile["legacy"]
 
         self.__logged_in = True
 
