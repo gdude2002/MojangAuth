@@ -11,7 +11,7 @@ class Account(object):
     __username = ""
     __uuid = ""
     __logged_in = False
-    __profiles = []
+    __profiles = None
 
     @property
     def logged_in(self):
@@ -30,6 +30,7 @@ class Account(object):
         return self.__uuid
 
     def __init__(self, client_token):
+        self.__profiles = []
         self.__client_token = client_token
 
     def authenticate(self, username, password):
